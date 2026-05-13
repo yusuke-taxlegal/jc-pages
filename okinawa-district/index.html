@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- surge: https://diagram-okinawa-district-2026.surge.sh -->
+    <link rel="canonical" href="https://diagram-okinawa-district-2026.surge.sh">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2026年 日本青年会議所沖縄地区協議会 議案提出スケジュール【7・5・3ルール対応】</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+            background-color: #f8f9fa;
+        }
+
+        .table-fixed-layout {
+            table-layout: fixed;
+        }
+
+        .calendar-day {
+            min-height: 100px;
+            padding: 8px;
+            border: 1px solid #e5e7eb;
+            position: relative;
+        }
+
+        .calendar-day.sunday {
+            color: #dc2626;
+        }
+
+        .calendar-day.saturday {
+            color: #2563eb;
+        }
+
+        .calendar-nav-btn {
+            font-size: 2rem;
+            color: #E76F51;
+            cursor: pointer;
+            transition: transform 0.2s, color 0.2s;
+            user-select: none;
+        }
+
+        .calendar-nav-btn:hover {
+            transform: scale(1.2);
+            color: #2A9D8F;
+        }
+
+        .calendar-day.other-month {
+            background-color: #f9fafb;
+            color: #9ca3af;
+        }
+
+        .calendar-day.today {
+            background-color: #fef3c7;
+        }
+
+        .event-badge {
+            font-size: 0.85rem;
+            padding: 4px 6px;
+            border-radius: 4px;
+            margin: 2px 0;
+            display: block;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        /* 正副役員会議＝緑、役員会議＝赤で統一（提出・配信・会議を含む） */
+        .event-seifuku {
+            background-color: #dcfce7;
+            color: #166534;
+        }
+
+        /* 緑：正副の提出・配信・会議 */
+        .event-yakuin {
+            background-color: #fee2e2;
+            color: #991b1b;
+        }
+
+        /* 赤：役員の提出・配信・会議 */
+        .event-meeting {
+            background-color: #dbeafe;
+            color: #1e40af;
+        }
+
+        /* 青：規則財審審査会議 */
+        .event-kaiin {
+            background-color: #f3e8ff;
+            color: #6b21a8;
+        }
+
+        /* 紫：会員会議所の提出・配信・会議 */
+        .event-entry {
+            background-color: #ffedd5;
+            color: #9a3412;
+        }
+
+        /* オレンジ：エントリー */
+        @media (max-width: 640px) {
+            .calendar-day {
+                min-height: 84px;
+                padding: 6px;
+            }
+
+            .event-badge {
+                font-size: 0.75rem;
+                padding: 3px 5px;
+            }
+        }
+    </style>
+</head>
+
+<body class="text-[#264653]">
+
+    <div class="max-w-7xl mx-auto p-4 md:p-8">
+
+        <header class="text-center mb-12">
+            <h1 class="text-4xl md:text-5xl font-bold text-[#E76F51] mb-2">2026年 沖縄地区協議会 議案提出スケジュール</h1>
+            <p class="text-lg text-gray-600">日本青年会議所沖縄地区協議会【7・5・3ルール対応】</p>
+        </header>
+
+        <section class="mb-16">
+            <div class="bg-white rounded-lg shadow-xl p-6 md:p-8 border-l-4 border-[#F4A261]">
+                <h2 class="text-2xl font-bold text-[#F4A261] mb-4">「7・5・3ルール」の徹底</h2>
+                <p class="text-base leading-relaxed mb-4">
+                    会議の<span class="font-bold text-[#E76F51]">7日前</span>までに上程票エントリー、<span
+                        class="font-bold text-[#E76F51]">5日前</span>までに担当上長（副会長）へ提出、<span
+                        class="font-bold text-[#E76F51]">3日前</span>までにアジェンダ配信。
+                </p>
+                <div class="p-4 bg-blue-50 border-l-4 border-blue-400 text-blue-800">
+                    <strong class="text-lg block mb-2">7・5・3ルールとは？</strong>
+                    <p class="mb-2"><span class="font-bold">【7日前】上程票エントリー：</span> 会議の7日前までに、上程票のエントリーを完了させます。</p>
+                    <p class="mb-2"><span class="font-bold">【5日前】担当上長へ提出：</span> 会議の5日前までに、議案書を担当副会長へ提出し、内容の事前チェックを受けます。
+                    </p>
+                    <p><span class="font-bold">【3日前】アジェンダ配信：</span> 上長の承認を得た最終版を、会議の3日前までにアジェンダシステムで全出席者へ配信します。</p>
+                </div>
+                <p class="mt-4 text-sm text-gray-600">
+                    ※基本、正副役員会議は第2火曜、規則財審審査会議は第3日曜、役員会議は第4土曜ですが、月により調整が入る場合があります。
+                </p>
+                <p class="mt-2 text-sm text-gray-600">
+                    ※規則財審：正副役員会議のアジェンダが公開される日（会議の3日前）に、規則財審局長による議案データのダウンロードを想定しています。規則財政審査の完了は、規則財審審査会議の2日前を目安にカレンダーへ反映しています。
+                </p>
+            </div>
+        </section>
+
+        <section class="mb-16">
+            <h2 class="text-3xl font-bold text-center text-[#E76F51] mb-8">月間カレンダー</h2>
+            <div class="flex justify-center mb-6">
+                <select id="monthSelector"
+                    class="px-4 py-2 border-2 border-[#E76F51] rounded-lg text-lg font-bold text-[#E76F51] bg-white focus:outline-none focus:ring-2 focus:ring-[#E76F51]">
+                    <option value="1">2026年1月</option>
+                    <option value="2">2026年2月</option>
+                    <option value="3">2026年3月</option>
+                    <option value="4">2026年4月</option>
+                    <option value="5">2026年5月</option>
+                    <option value="6">2026年6月</option>
+                    <option value="7">2026年7月</option>
+                    <option value="8">2026年8月</option>
+                    <option value="9">2026年9月</option>
+                    <option value="10">2026年10月</option>
+                    <option value="11">2026年11月</option>
+                    <option value="12">2026年12月</option>
+                </select>
+            </div>
+            <div class="flex justify-center mb-8">
+                <div id="calendarContainer" class="bg-white rounded-lg shadow-lg p-6 max-w-5xl w-full relative"></div>
+            </div>
+            <div class="bg-white rounded-lg shadow-lg p-4 mt-6">
+                <h3 class="text-lg font-bold mb-3 text-center text-[#2A9D8F]">凡例</h3>
+                <div class="flex flex-wrap justify-center gap-4 text-sm">
+                    <span class="event-badge event-seifuku">正副</span><span>正副役員会議（上程・公開・会議）</span>
+                    <span class="event-badge event-yakuin">役員</span><span>役員会議（上程・公開・会議）</span>
+                    <span class="event-badge event-meeting">規則</span><span>規則財審審査会議</span>
+                    <span class="event-badge event-meeting">DL</span><span>規則財審局長・議案データDL（正副アジェンダ公開日）</span>
+                    <span class="event-badge event-meeting">完</span><span>規則財政審査完了（規則財審審査会議の2日前）</span>
+                    <span class="event-badge event-kaiin">会員</span><span>会員会議所</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="mb-16">
+            <h2 class="text-3xl font-bold text-center text-[#E76F51] mb-8">Part 1：年間提出デッドラインカレンダー (7・5・3ルール)</h2>
+            <div class="bg-white rounded-lg shadow-lg overflow-x-auto">
+                <table class="w-full text-sm text-left table-fixed-layout">
+                    <thead class="bg-gray-100 text-gray-600 uppercase text-xs">
+                        <tr>
+                            <th class="p-2 border border-gray-200">会議月</th>
+                            <th class="p-2 border border-gray-200 bg-green-50 text-center">エントリー(7日前)<br>for 正副</th>
+                            <th class="p-2 border border-gray-200 bg-green-50 text-center">上程(5日前)<br>for 正副</th>
+                            <th class="p-2 border border-gray-200 bg-green-50 text-center">公開(3日前)<br>& 正副</th>
+                            <th class="p-2 border border-gray-200 bg-red-50 text-center">エントリー(7日前)<br>for 役員</th>
+                            <th class="p-2 border border-gray-200 bg-red-50 text-center">上程(5日前)<br>for 役員</th>
+                            <th class="p-2 border border-gray-200 bg-red-50 text-center">公開(3日前)<br>& 役員</th>
+                        </tr>
+                    </thead>
+                    <tbody id="deadlineTableBody"></tbody>
+                </table>
+            </div>
+        </section>
+
+        <section class="mb-16">
+            <h2 class="text-3xl font-bold text-center text-[#E76F51] mb-8">Part 2：議案書データの流れとアクションプラン</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-white rounded-lg shadow-lg p-6 border-t-4 border-[#2A9D8F]">
+                    <h3 class="font-bold text-xl text-[#2A9D8F] mb-4">フェーズ1：正副役員会議での事前審議</h3>
+                    <p class="text-sm mb-6">事業の骨子を固め、会長・副会長・専務の場で協議するためのステップ。</p>
+                    <div class="space-y-4">
+                        <div class="p-3 bg-gray-50 rounded-md">
+                            <p class="font-semibold text-sm">担当：議案書(案)の作成</p>
+                        </div>
+                        <div class="text-center text-gray-400">▼</div>
+                        <div class="p-3 bg-gray-50 rounded-md">
+                            <p class="font-semibold text-sm text-red-600">担当 → 副会長へデータ提出 (5日前)</p>
+                        </div>
+                        <div class="text-center text-gray-400">▼</div>
+                        <div class="p-3 bg-gray-50 rounded-md">
+                            <p class="font-semibold text-sm">副会長 → 専務へ提出</p>
+                        </div>
+                        <div class="text-center text-gray-400">▼</div>
+                        <div class="p-3 bg-green-100 rounded-md border border-green-300">
+                            <p class="font-semibold text-sm text-green-800">専務：アジェンダ配信 (3日前) & 正副役員会議</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg shadow-lg p-6 border-t-4 border-[#E76F51]">
+                    <h3 class="font-bold text-xl text-[#E76F51] mb-4">フェーズ2：役員会議での最終承認</h3>
+                    <p class="text-sm mb-6">正副役員会議の意見を反映し、役員全員の意思決定の場に臨みます。</p>
+                    <div class="space-y-4">
+                        <div class="p-3 bg-gray-50 rounded-md">
+                            <p class="font-semibold text-sm">担当：議案書の修正・改善</p>
+                        </div>
+                        <div class="text-center text-gray-400">▼</div>
+                        <div class="p-3 bg-gray-50 rounded-md">
+                            <p class="font-semibold text-sm text-red-600">担当 → 副会長へ最終データ提出 (5日前)</p>
+                        </div>
+                        <div class="text-center text-gray-400">▼</div>
+                        <div class="p-3 bg-gray-50 rounded-md">
+                            <p class="font-semibold text-sm">副会長 → 専務へ最終提出</p>
+                        </div>
+                        <div class="text-center text-gray-400">▼</div>
+                        <div class="p-3 bg-orange-100 rounded-md border border-orange-300">
+                            <p class="font-semibold text-sm text-orange-800">専務：アジェンダ配信 (3日前) & 役員会議</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="mb-16">
+            <h2 class="text-3xl font-bold text-center text-[#E76F51] mb-6">2026年 沖縄地区協議会 会議日程一覧</h2>
+            <p class="text-center text-sm text-gray-600 mb-6">※開催時間は掲載しておりません。場所は括弧内。</p>
+            <div class="bg-white rounded-lg shadow-lg overflow-x-auto">
+                <table class="w-full text-sm">
+                    <thead class="bg-gray-100">
+                        <tr>
+                            <th class="p-3 text-left">月</th>
+                            <th class="p-3 text-left">正副役員会議<br><span class="font-normal text-gray-500">会長・副会長・専務</span>
+                            </th>
+                            <th class="p-3 text-left">規則財審審査会議<br><span class="font-normal text-gray-500">局長・副局長</span>
+                            </th>
+                            <th class="p-3 text-left">役員会議<br><span class="font-normal text-gray-500">役員全員</span></th>
+                            <th class="p-3 text-left">会員会議所<br><span
+                                    class="font-normal text-gray-500">各LOM理事長+役員全員</span></th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y" id="scheduleTableBody"></tbody>
+                </table>
+            </div>
+        </section>
+
+        <footer class="text-center mt-12 text-gray-500 text-sm">
+            <p>日本青年会議所沖縄地区協議会 2026年スケジュール</p>
+        </footer>
+
+    </div>
+
+    <div id="dayDetailModal" class="fixed inset-0 z-50 hidden" aria-hidden="true">
+        <div id="dayDetailOverlay" class="absolute inset-0 bg-black/40"></div>
+        <div class="absolute inset-x-0 bottom-0 sm:inset-0 sm:flex sm:items-center sm:justify-center p-3 sm:p-6">
+            <div class="w-full sm:max-w-md bg-white rounded-xl shadow-2xl border border-gray-100 overflow-hidden">
+                <div class="flex items-center justify-between px-4 py-3 bg-gray-50 border-b">
+                    <div>
+                        <div class="text-xs text-gray-500">イベント詳細</div>
+                        <div id="dayDetailTitle" class="text-base font-bold text-[#264653]">-</div>
+                    </div>
+                    <button id="dayDetailCloseBtn"
+                        class="px-3 py-1 rounded-md text-sm font-bold text-[#E76F51] hover:bg-white border border-[#E76F51]">閉じる</button>
+                </div>
+                <div class="px-4 py-4">
+                    <div
+                        class="mb-3 p-3 rounded-lg bg-blue-50 border border-blue-100 text-blue-900 text-xs leading-relaxed">
+                        <div class="font-bold mb-1">表示の見方（7・5・3ルール）</div>
+                        <div><span class="font-bold">エ（エントリー）</span>：会議の<strong>7日前</strong>までに上程票エントリー</div>
+                        <div><span class="font-bold">上（上程）</span>：会議の<strong>5日前</strong>までに上程（提出）</div>
+                        <div><span class="font-bold">公（公開）</span>：会議の<strong>3日前</strong>までにアジェンダ公開</div>
+                        <div class="mt-2 pt-2 border-t border-blue-200"><span class="font-bold">規則財審</span>：<strong>DL</strong>＝正副アジェンダ公開日に局長が議案データをダウンロード、<strong>完了</strong>＝規則財審審査会議の2日前に財政審査完了を想定</div>
+                    </div>
+                    <ul id="dayDetailList" class="space-y-2 text-sm"></ul>
+                    <div id="dayDetailEmpty" class="text-sm text-gray-500 hidden">この日のイベントはありません。</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const TARGET_YEAR = 2026;
+        const weekdayKanji = ['日', '月', '火', '水', '木', '金', '土'];
+
+        // 2026年 沖縄地区協議会 会議日程（画像・注釈に基づく）
+        const OKINAWA_2026 = {
+            seifuku: {  // 正副役員会議 2月,3,4,5,7,8,9,10月のみ
+                2: { day: 9, dow: 1, place: '沖縄' },
+                3: { day: 10, dow: 2, place: '沖縄' },
+                4: { day: 14, dow: 2, place: '沖縄' },
+                5: { day: 12, dow: 2, place: '沖縄' },
+                7: { day: 14, dow: 2, place: '沖縄' },
+                8: { day: 10, dow: 1, place: '沖縄' },
+                9: { day: 8, dow: 2, place: '沖縄' },
+                10: { day: 13, dow: 2, place: '沖縄' }
+            },
+            kisoku: {  // 規則財審審査会議 第3日曜が基本（月により調整）
+                1: { day: 18, dow: 0 },
+                2: { day: 22, dow: 0 },
+                3: { day: 15, dow: 0 },
+                4: { day: 19, dow: 0 },
+                5: { day: 17, dow: 0 },
+                6: { day: 21, dow: 0 },
+                7: { day: 19, dow: 0 },
+                8: { day: 16, dow: 0 },
+                9: { day: 20, dow: 0 },
+                10: { day: 18, dow: 0 },
+                11: { day: 22, dow: 0 }
+            },
+            yakuin: {  // 役員会議 第4土曜が基本（月により調整）
+                1: { day: 9, dow: 5, place: 'ZOOM' },
+                2: { day: 28, dow: 6, place: '那覇' },
+                3: { day: 21, dow: 6, place: '那覇' },
+                4: { day: 24, dow: 5, place: '那覇' },
+                5: { day: 23, dow: 6, place: '那覇' },
+                6: { day: 9, dow: 2, place: '那覇' },
+                7: { day: 25, dow: 6, place: '沖縄' },
+                8: { day: 22, dow: 6, place: '那覇' },
+                9: { day: 19, dow: 6, place: '那覇', note: '※' },
+                10: { day: 24, dow: 6, place: '那覇', note: '※' },
+                11: { day: 9, dow: 1, place: '那覇' },
+                12: { day: null, place: '予備' }
+            },
+            kaiin: {  // 会員会議所 1,6,11月＋12月予備
+                1: { day: 23, dow: 5, place: '京都' },
+                6: { day: 27, dow: 6, place: '沖縄' },
+                11: { day: 28, dow: 6, place: '宮古' },
+                12: { day: 26, dow: 6, place: '予備' }
+            }
+        };
+
+        function shiftDays(d, delta) { const x = new Date(d); x.setDate(x.getDate() + delta); return x; }
+
+        function addEvent(events, day, ev) {
+            if (!events[day]) events[day] = [];
+            events[day].push(ev);
+        }
+
+        function formatJP(d) { return `${d.getMonth() + 1}月${d.getDate()}日(${weekdayKanji[d.getDay()]})`; }
+        function formatSlash(d) { return `${d.getMonth() + 1}/${d.getDate()}(${weekdayKanji[d.getDay()]})`; }
+
+        function buildCalendarData() {
+            const data = {};
+            for (let m = 1; m <= 12; m++) {
+                const first = new Date(TARGET_YEAR, m - 1, 1).getDay();
+                const days = new Date(TARGET_YEAR, m, 0).getDate();
+                const events = {};
+
+                const sf = OKINAWA_2026.seifuku[m];
+                const yk = OKINAWA_2026.yakuin[m];
+
+                if (sf && sf.day) {
+                    const meet = new Date(TARGET_YEAR, m - 1, sf.day);
+                    addEvent(events, meet.getDate(), { type: 'meeting', label: '正副役員会議' + (sf.place ? '(' + sf.place + ')' : '') });
+                    addEvent(events, shiftDays(meet, -7).getDate(), { type: 'entry', label: 'エントリー(正副)' });
+                    addEvent(events, shiftDays(meet, -5).getDate(), { type: 'submit', label: '上程(正副)' });
+                    addEvent(events, shiftDays(meet, -3).getDate(), { type: 'agenda', label: '公開(正副)' });
+                    addEvent(events, shiftDays(meet, -3).getDate(), { type: 'kisoku_dl', label: '規則財審局長：議案データダウンロード（正副アジェンダ公開日）' });
+                }
+                const kis = OKINAWA_2026.kisoku[m];
+                if (kis && kis.day) {
+                    const kisMeet = new Date(TARGET_YEAR, m - 1, kis.day);
+                    addEvent(events, kis.day, { type: 'meeting', label: '規則財審審査会議' });
+                    addEvent(events, shiftDays(kisMeet, -2).getDate(), { type: 'kisoku_done', label: '規則財政審査完了（規則財審審査会議2日前）' });
+                }
+                if (yk && yk.day) {
+                    const meet = new Date(TARGET_YEAR, m - 1, yk.day);
+                    addEvent(events, meet.getDate(), { type: 'meeting', label: '役員会議' + (yk.place ? '(' + yk.place + ')' : '') });
+                    addEvent(events, shiftDays(meet, -7).getDate(), { type: 'entry', label: 'エントリー(役員)' });
+                    addEvent(events, shiftDays(meet, -5).getDate(), { type: 'submit', label: '上程(役員)' });
+                    addEvent(events, shiftDays(meet, -3).getDate(), { type: 'agenda', label: '公開(役員)' });
+                }
+                const ki = OKINAWA_2026.kaiin[m];
+                if (ki && ki.day) {
+                    addEvent(events, ki.day, { type: 'meeting', label: '会員会議所' + (ki.place ? '(' + ki.place + ')' : '') });
+                    // 6月・11月は5・3ルール適用
+                    if (m === 6 || m === 11) {
+                        const kaiinMeet = new Date(TARGET_YEAR, m - 1, ki.day);
+                        addEvent(events, shiftDays(kaiinMeet, -7).getDate(), { type: 'entry', label: 'エントリー(会員)' });
+                        addEvent(events, shiftDays(kaiinMeet, -5).getDate(), { type: 'submit', label: '上程(会員)' });
+                        addEvent(events, shiftDays(kaiinMeet, -3).getDate(), { type: 'agenda', label: '公開(会員)' });
+                    }
+                }
+
+                data[m] = {
+                    firstDayOffset: first,
+                    days,
+                    events,
+                    meta: {
+                        seifuku: sf && sf.day ? {
+                            meet: new Date(TARGET_YEAR, m - 1, sf.day),
+                            entry: shiftDays(new Date(TARGET_YEAR, m - 1, sf.day), -7),
+                            submit: shiftDays(new Date(TARGET_YEAR, m - 1, sf.day), -5),
+                            agenda: shiftDays(new Date(TARGET_YEAR, m - 1, sf.day), -3)
+                        } : null,
+                        yakuin: yk && yk.day ? {
+                            meet: new Date(TARGET_YEAR, m - 1, yk.day),
+                            entry: shiftDays(new Date(TARGET_YEAR, m - 1, yk.day), -7),
+                            submit: shiftDays(new Date(TARGET_YEAR, m - 1, yk.day), -5),
+                            agenda: shiftDays(new Date(TARGET_YEAR, m - 1, yk.day), -3)
+                        } : null
+                    }
+                };
+            }
+            return data;
+        }
+
+        const calendarData = buildCalendarData();
+
+        function shortLabel(ev) {
+            if (ev.type === 'entry') return 'エ';
+            if (ev.type === 'submit') return '上';
+            if (ev.type === 'agenda') return '公';
+            if (ev.type === 'kisoku_dl') return 'DL';
+            if (ev.type === 'kisoku_done') return '完';
+            if (ev.type === 'meeting') {
+                if (ev.label.indexOf('正副') >= 0) return '正副';
+                if (ev.label.indexOf('役員会議') >= 0) return '役員';
+                if (ev.label.indexOf('規則') >= 0) return '規財';
+                if (ev.label.indexOf('会員') >= 0) return '会員';
+                return '会';
+            }
+            return '会員';
+        }
+
+        function getEventBadgeClass(ev) {
+            if (ev.type === 'kisoku_dl' || ev.type === 'kisoku_done') return 'event-meeting';
+            if (ev.label.indexOf('正副') >= 0) return 'event-seifuku';
+            if (ev.label.indexOf('役員') >= 0) return 'event-yakuin';
+            if (ev.label.indexOf('会員') >= 0) return 'event-kaiin';
+            if (ev.label.indexOf('規則') >= 0) return 'event-meeting';
+            return 'event-meeting';
+        }
+
+        function renderDeadlineTable() {
+            const tbody = document.getElementById('deadlineTableBody');
+            let html = '';
+            for (let m = 1; m <= 12; m++) {
+                const meta = calendarData[m].meta;
+                const prevSf = m > 1 ? calendarData[m - 1].meta.seifuku : null;
+                html += '<tr class="hover:bg-gray-50 border-b border-gray-100"><td class="p-2 font-bold text-center">' + m + '月</td>';
+
+                // 正副 (前月開催分を表示するか、当月開催分か...元のロジックは「前月の正副」を表示していた？
+                // 元のヘッダ：役員会議承認月(m月)に対して、その承認を得るための正副は通常前月に行われることが多いが、
+                // ここでは「役員会議承認月」のカラムに対して、左側に「正副」右側に「役員」を配置している。
+                // 元コード: prevSf = calendarData[m - 1].meta.seifuku
+                // つまり、m月の役員会議に向けた、m-1月の正副会議のスパンを表示している。
+
+                if (prevSf) {
+                    html += '<td class="p-2 text-center text-xs bg-green-50">' + formatSlash(prevSf.entry) + '</td>';
+                    html += '<td class="p-2 text-center text-xs bg-green-50">' + formatSlash(prevSf.submit) + '</td>';
+                    html += '<td class="p-2 text-center text-xs bg-green-50">' + formatSlash(prevSf.agenda) + '<br><span class="text-gray-500">' + formatSlash(prevSf.meet) + '</span></td>';
+                } else {
+                    html += '<td class="p-2 text-center text-gray-400 bg-green-50" colspan="3">-</td>';
+                }
+
+                if (meta.yakuin) {
+                    html += '<td class="p-2 text-center text-xs bg-red-50">' + formatSlash(meta.yakuin.entry) + '</td>';
+                    html += '<td class="p-2 text-center text-xs bg-red-50">' + formatSlash(meta.yakuin.submit) + '</td>';
+                    html += '<td class="p-2 text-center text-xs bg-red-50">' + formatSlash(meta.yakuin.agenda) + '<br><span class="text-gray-500">' + formatSlash(meta.yakuin.meet) + '</span></td>';
+                } else {
+                    html += '<td class="p-2 text-center text-gray-400 bg-red-50" colspan="3">-</td>';
+                }
+                html += '</tr>';
+            }
+            tbody.innerHTML = html;
+        }
+
+        function renderScheduleTable() {
+            const tbody = document.getElementById('scheduleTableBody');
+            let html = '';
+            for (let m = 1; m <= 12; m++) {
+                const sf = OKINAWA_2026.seifuku[m];
+                const kis = OKINAWA_2026.kisoku[m];
+                const yk = OKINAWA_2026.yakuin[m];
+                const ki = OKINAWA_2026.kaiin[m];
+                const fmt = (o) => o && o.day ? (o.note || '') + o.day + '日(' + weekdayKanji[o.dow] + ')' + (o.place ? ' ' + o.place : '') : (o && o.place ? o.place : '-');
+                html += '<tr class="hover:bg-gray-50"><td class="p-3 font-bold">' + m + '月</td>';
+                html += '<td class="p-3">' + (sf ? fmt(sf) : '-') + '</td>';
+                html += '<td class="p-3">' + (kis ? fmt(kis) : '-') + '</td>';
+                html += '<td class="p-3">' + (yk ? (yk.day ? fmt(yk) : yk.place) : '-') + '</td>';
+                html += '<td class="p-3">' + (ki ? fmt(ki) : '-') + '</td></tr>';
+            }
+            tbody.innerHTML = html;
+        }
+
+        let currentMonth = 1;
+
+        function renderCalendar(month) {
+            currentMonth = month;
+            const d = calendarData[month];
+            const container = document.getElementById('calendarContainer');
+            const names = ['', '1月', '2月', '3月', '4月', '5月', '6月', '7月', '8月', '9月', '10月', '11月', '12月'];
+            let html = '<div class="absolute top-4 left-4 calendar-nav-btn" id="prevMonthBtn" title="前月">←</div>';
+            html += '<div class="absolute top-4 right-4 calendar-nav-btn" id="nextMonthBtn" title="来月">→</div>';
+            html += '<div class="pt-8 pb-4"><h3 class="text-3xl font-bold text-center mb-6 text-[#E76F51]">' + TARGET_YEAR + '年' + names[month] + '</h3>';
+            html += '<div class="grid grid-cols-7 gap-2 text-base mb-3">';
+            ['日', '月', '火', '水', '木', '金', '土'].forEach((w, i) => { html += '<div class="text-center font-bold py-2' + (i === 0 ? ' text-red-600' : i === 6 ? ' text-blue-600' : ' text-gray-600') + '">' + w + '</div>'; });
+            html += '</div><div class="grid grid-cols-7 gap-2 text-base">';
+            for (let i = 0; i < d.firstDayOffset; i++) html += '<div class="calendar-day other-month"></div>';
+            for (let day = 1; day <= d.days; day++) {
+                const evs = d.events[day] || [];
+                const dow = (d.firstDayOffset + day - 1) % 7;
+                const dc = dow === 0 ? 'sunday' : (dow === 6 ? 'saturday' : '');
+                html += '<div class="calendar-day ' + dc + '" data-day="' + day + '" role="button" tabindex="0">';
+                html += '<div class="font-bold mb-2 text-lg">' + day + '</div>';
+                evs.forEach(ev => {
+                    const bc = getEventBadgeClass(ev);
+                    html += '<span class="event-badge ' + bc + '" title="' + ev.label + '"><span class="hidden sm:inline">' + ev.label + '</span><span class="sm:hidden">' + shortLabel(ev) + '</span></span>';
+                });
+                html += '</div>';
+            }
+            const fill = 42 - d.firstDayOffset - d.days;
+            for (let i = 0; i < fill; i++) html += '<div class="calendar-day other-month"></div>';
+            html += '</div></div>';
+            container.innerHTML = html;
+            document.getElementById('monthSelector').value = month;
+        }
+
+        function openDayDetail(month, day) {
+            const modal = document.getElementById('dayDetailModal');
+            const title = document.getElementById('dayDetailTitle');
+            const list = document.getElementById('dayDetailList');
+            const empty = document.getElementById('dayDetailEmpty');
+            const d = new Date(TARGET_YEAR, month - 1, day);
+            title.textContent = TARGET_YEAR + '年' + formatJP(d);
+            const evs = (calendarData[month] && calendarData[month].events && calendarData[month].events[day]) || [];
+            list.innerHTML = '';
+            if (evs.length === 0) { empty.classList.remove('hidden'); } else {
+                empty.classList.add('hidden');
+                list.innerHTML = evs.map(function (ev) {
+                    var bc = getEventBadgeClass(ev);
+                    var tl = ev.type === 'meeting' ? '会議' : ev.type === 'entry' ? 'エントリー' : ev.type === 'submit' ? '提出' : ev.type === 'agenda' ? '配信' : ev.type === 'kisoku_dl' ? 'DL' : ev.type === 'kisoku_done' ? '完了' : 'イベント';
+                    return '<li class="flex items-start gap-2"><span class="event-badge ' + bc + ' shrink-0">' + tl + '</span><span>' + ev.label + '</span></li>';
+                }).join('');
+            }
+            modal.classList.remove('hidden'); document.body.style.overflow = 'hidden';
+        }
+
+        function closeDayDetail() {
+            document.getElementById('dayDetailModal').classList.add('hidden');
+            document.body.style.overflow = '';
+        }
+
+        document.getElementById('calendarContainer').addEventListener('click', function (e) {
+            if (e.target.id === 'prevMonthBtn' || e.target.closest('#prevMonthBtn')) { if (currentMonth > 1) renderCalendar(currentMonth - 1); }
+            else if (e.target.id === 'nextMonthBtn' || e.target.closest('#nextMonthBtn')) { if (currentMonth < 12) renderCalendar(currentMonth + 1); }
+            else { const cell = e.target.closest('.calendar-day[data-day]'); if (cell) openDayDetail(currentMonth, parseInt(cell.getAttribute('data-day'), 10)); }
+        });
+        document.getElementById('dayDetailCloseBtn')?.addEventListener('click', closeDayDetail);
+        document.getElementById('dayDetailOverlay')?.addEventListener('click', closeDayDetail);
+        document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeDayDetail(); });
+        document.getElementById('monthSelector').addEventListener('change', function (e) { renderCalendar(parseInt(e.target.value)); });
+
+        renderDeadlineTable();
+        renderScheduleTable();
+        const now = new Date();
+        renderCalendar((now.getFullYear() === TARGET_YEAR && now.getMonth() + 1 <= 12) ? now.getMonth() + 1 : 1);
+    </script>
+
+</body>
+
+</html>
