@@ -2,8 +2,8 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <!-- surge: https://jc-kisokuzaishin.surge.sh -->
-  <link rel="canonical" href="https://jc-kisokuzaishin.surge.sh">
+  <!-- canonical: GitHub Pages -->
+  <link rel="canonical" href="https://yusuke-taxlegal.github.io/jc-pages/kisokuzaishin/">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
   <meta name="googlebot" content="noindex, nofollow">
@@ -44,6 +44,8 @@
     }
   </script>
   <style>
+    html, body { overflow-x: hidden; }
+    code { overflow-wrap: anywhere; word-break: break-word; }
     @media print {
       .no-print { display: none !important; }
       body { border-top: none !important; }
@@ -82,7 +84,7 @@
     <i data-lucide="building-2" class="w-4 h-4"></i>
     組織運営
   </div>
-  <h1 class="text-3xl md:text-5xl font-black text-slate-900 tracking-tight mb-6">
+  <h1 class="text-2xl sm:text-3xl md:text-5xl font-black text-slate-900 tracking-tight mb-6">
     <span class="bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent">規則財政審査局</span>の業務フロー
   </h1>
   <p class="text-lg text-ads-muted max-w-xl mx-auto leading-relaxed">
@@ -90,6 +92,62 @@
     <a href="https://yusuke-taxlegal.github.io/jc-pages/okinawa-district/" target="_blank" rel="noopener noreferrer" class="text-cyan-600 font-medium underline decoration-cyan-500/40 underline-offset-2 hover:text-cyan-800">毎月の会議サイクル</a>に沿った具体的な業務の流れを図解します。
   </p>
 </div>
+
+<!-- ============================================================ -->
+<!--  NEW STANDARD REVIEW FLOW                                    -->
+<!-- ============================================================ -->
+<section class="mb-12 md:mb-16" aria-labelledby="standard-review-flow">
+  <div class="bg-blue-950 text-white rounded-2xl p-6 md:p-10 shadow-sm">
+    <div class="max-w-2xl mb-8">
+      <div class="inline-flex items-center gap-2 bg-white/10 border border-white/15 rounded-full px-3 py-1 text-xs font-bold tracking-wide mb-4">
+        <i data-lucide="workflow" class="w-3.5 h-3.5"></i>
+        これからの標準フロー
+      </div>
+      <h2 id="standard-review-flow" class="text-2xl md:text-3xl font-black mb-3">AIで下準備し、担当者が一次資料とマニュアルで確かめる</h2>
+      <p class="text-sm md:text-base text-blue-100 leading-relaxed">
+        議案ごとの担当者を先に決め、<code class="bg-white/10 px-1.5 py-0.5 rounded text-white">jc-kisokuzaishin-agenda-review</code>でAI要約と意見・質問の下書きを用意します。その後、担当者がアジェンダシステムの議案とNotebook LMのマニュアル回答を突き合わせ、内容を確認・修正します。確認が終わった議案は、局長へ「チェック完了しました」と報告します。
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+      <div class="rounded-xl bg-white/10 border border-white/15 p-4">
+        <div class="text-xs font-black text-cyan-300 mb-2">01</div>
+        <h3 class="font-bold mb-1">担当者を事前決定</h3>
+        <p class="text-xs text-blue-100 leading-relaxed">議案ごとに担当局員を割り振り、確認漏れと重複を防ぐ。</p>
+      </div>
+      <div class="rounded-xl bg-white/10 border border-white/15 p-4">
+        <div class="text-xs font-black text-cyan-300 mb-2">02</div>
+        <h3 class="font-bold mb-1">AI要約・質問案を作成</h3>
+        <p class="text-xs text-blue-100 leading-relaxed">専用スキルで議案を整理し、意見・質問シートへ「AI事前案」として下書きする。</p>
+      </div>
+      <div class="rounded-xl bg-white/10 border border-white/15 p-4">
+        <div class="text-xs font-black text-cyan-300 mb-2">03</div>
+        <h3 class="font-bold mb-1">原議案を確認</h3>
+        <p class="text-xs text-blue-100 leading-relaxed">オブザーブアカウントでアジェンダシステムを開き、最新の議案・添付資料と照合する。</p>
+      </div>
+      <div class="rounded-xl bg-white/10 border border-white/15 p-4">
+        <div class="text-xs font-black text-cyan-300 mb-2">04</div>
+        <h3 class="font-bold mb-1">マニュアルを照会</h3>
+        <p class="text-xs text-blue-100 leading-relaxed">JCマニュアルを読み込ませたNotebook LMへ質問し、規則・財政上の根拠を確かめる。</p>
+      </div>
+      <div class="rounded-xl bg-white/10 border border-white/15 p-4">
+        <div class="text-xs font-black text-cyan-300 mb-2">05</div>
+        <h3 class="font-bold mb-1">担当者が確認・修正</h3>
+        <p class="text-xs text-blue-100 leading-relaxed">AI案をそのまま確定せず、根拠・表現・優先度を人が確認してシートを整える。</p>
+      </div>
+      <div class="rounded-xl bg-cyan-400/15 border border-cyan-300/30 p-4">
+        <div class="text-xs font-black text-cyan-200 mb-2">06</div>
+        <h3 class="font-bold mb-1">局長へ完了報告</h3>
+        <p class="text-xs text-blue-50 leading-relaxed">確認済みであることを読み戻した後、指定の連絡手段で「チェック完了しました」と報告する。</p>
+      </div>
+    </div>
+
+    <div class="mt-5 flex items-start gap-2 text-xs text-blue-100 bg-black/10 rounded-lg px-4 py-3">
+      <i data-lucide="shield-check" class="w-4 h-4 text-cyan-300 flex-shrink-0 mt-0.5"></i>
+      <p>AIは要約・指摘案・入力の下準備を担当します。採否や最終判断は、担当局員と規則財政審査局が行います。</p>
+    </div>
+  </div>
+</section>
 
 
 <!-- ============================================================ -->
@@ -305,18 +363,18 @@
 
 
 <!-- ============================================================ -->
-<!--  SECTION 3: 業務フロー STEP 1〜5                              -->
+<!--  SECTION 3: 月次運用の基本フロー                               -->
 <!-- ============================================================ -->
 <section class="mb-16 md:mb-20">
   <div class="flex items-center gap-3 mb-8">
     <div class="flex items-center justify-center w-10 h-10 rounded-lg bg-amber-500/10 flex-shrink-0">
       <i data-lucide="list-ordered" class="w-5 h-5 text-amber-600"></i>
     </div>
-    <h2 class="text-xl md:text-2xl font-bold text-slate-900">業務フロー — STEP 1〜5</h2>
+    <h2 class="text-xl md:text-2xl font-bold text-slate-900">月次運用の基本フロー — STEP 1〜5</h2>
   </div>
 
   <p class="mb-8 leading-relaxed">
-    正副役員会議から規則審査会議までの間に、局は5つのステップで業務を進めます。それぞれのステップで「誰が・何を・どのように行うか」を縦のタイムラインで確認しましょう。
+    正副役員会議から規則審査会議までの月次運用を5段階で示します。STEP 3以降では、冒頭の標準フローに沿って、担当決定・AI事前整理・一次資料とマニュアルによる確認・局長への完了報告までを行います。
   </p>
 
   <!-- 縦タイムライン -->
@@ -388,20 +446,20 @@
         <div class="flex-1 bg-ads-surface border border-ads-border rounded-xl p-5 md:p-6 mb-2">
           <div class="flex items-center gap-2 mb-3">
             <i data-lucide="file-search" class="w-4 h-4 text-cyan-600"></i>
-            <h3 class="font-bold text-slate-900">書類確認・審査</h3>
+            <h3 class="font-bold text-slate-900">担当決定・AI事前整理</h3>
             <span class="ml-auto text-[10px] bg-cyan-500/10 text-cyan-600 font-medium px-2 py-0.5 rounded-full">局メンバーが実施</span>
           </div>
           <p class="text-sm text-ads-muted leading-relaxed mb-4">
-            アップロードされた書類を局メンバーが確認します。<a href="https://drive.google.com/drive/folders/1razmxGtDoU5iMmGM4ed7Is-DHdvyG0Vc?usp=sharing" target="_blank" rel="noopener noreferrer" class="text-emerald-600 font-medium underline decoration-emerald-500/35 underline-offset-2 hover:text-emerald-700">Googleドライブ</a>の規則フォルダーに格納されたマニュアルに基づいて審査し、問題点・確認事項を所定の<a href="https://drive.google.com/drive/folders/1leFX675ZnuU9IRSQ4oAc1W0vq2j9UhuA?usp=sharing" target="_blank" rel="noopener noreferrer" class="text-blue-600 font-medium underline decoration-blue-500/35 underline-offset-2 hover:text-blue-700">Googleスプレッドシート</a>にまとめます。
+            上程された議案ごとに担当局員を決めます。専用スキル <code class="text-xs bg-slate-200 px-1.5 py-0.5 rounded text-slate-800">jc-kisokuzaishin-agenda-review</code> でAI要約と指摘案を作成し、所定の<a href="https://drive.google.com/drive/folders/1leFX675ZnuU9IRSQ4oAc1W0vq2j9UhuA?usp=sharing" target="_blank" rel="noopener noreferrer" class="text-blue-600 font-medium underline decoration-blue-500/35 underline-offset-2 hover:text-blue-700">意見・質問シート</a>へ「AI事前案」として下書きします。
           </p>
           <div class="flex flex-wrap gap-2">
-            <a href="https://drive.google.com/drive/folders/1razmxGtDoU5iMmGM4ed7Is-DHdvyG0Vc?usp=sharing" target="_blank" rel="noopener noreferrer" class="flex items-center gap-1.5 bg-white border border-ads-border rounded-lg px-3 py-1.5 text-xs text-slate-700 hover:border-emerald-500/40 hover:bg-emerald-50/60 transition-colors">
+            <div class="flex items-center gap-1.5 bg-white border border-ads-border rounded-lg px-3 py-1.5 text-xs text-slate-700">
               <i data-lucide="folder-open" class="w-3.5 h-3.5 text-emerald-500"></i>
-              規則フォルダーのマニュアル参照
-            </a>
+              議案ごとの担当を決定
+            </div>
             <a href="https://drive.google.com/drive/folders/1leFX675ZnuU9IRSQ4oAc1W0vq2j9UhuA?usp=sharing" target="_blank" rel="noopener noreferrer" class="flex items-center gap-1.5 bg-white border border-ads-border rounded-lg px-3 py-1.5 text-xs text-slate-700 hover:border-blue-500/40 hover:bg-blue-50/60 transition-colors">
               <i data-lucide="file-text" class="w-3.5 h-3.5 text-cyan-500"></i>
-              Googleスプレッドシートに記録
+              AI要約・質問案を下書き
             </a>
           </div>
         </div>
@@ -415,11 +473,11 @@
         <div class="flex-1 bg-ads-surface border border-ads-border rounded-xl p-5 md:p-6 mb-2">
           <div class="flex items-center gap-2 mb-3">
             <i data-lucide="users-round" class="w-4 h-4 text-orange-600"></i>
-            <h3 class="font-bold text-slate-900">担当割り振りと書き込み</h3>
+            <h3 class="font-bold text-slate-900">原議案・マニュアルとの照合</h3>
             <span class="ml-auto text-[10px] bg-orange-500/10 text-orange-600 font-medium px-2 py-0.5 rounded-full">局員が分担</span>
           </div>
           <p class="text-sm text-ads-muted leading-relaxed mb-4">
-            上程される議案を「協議議案（きょうぎぎあん）」と「審議議案（しんぎぎあん）」に分け、局員が担当を割り振ります。各担当者は<a href="https://drive.google.com/drive/folders/1leFX675ZnuU9IRSQ4oAc1W0vq2j9UhuA?usp=sharing" target="_blank" rel="noopener noreferrer" class="text-blue-600 font-medium underline decoration-blue-500/35 underline-offset-2 hover:text-blue-700">Googleスプレッドシート</a>に指摘事項を書き込みます。
+            担当者は、オブザーブアカウントで<a href="https://ag.jaycee.or.jp/2026/okinawa/user/login" target="_blank" rel="noopener noreferrer" class="text-purple-600 font-medium underline decoration-purple-500/35 underline-offset-2 hover:text-purple-700">アジェンダシステム</a>の最新議案・添付資料を確認します。さらに<a href="https://notebooklm.google.com/notebook/7a911ad8-095e-4f80-b9f0-58f806c3897a" target="_blank" rel="noopener noreferrer" class="text-amber-700 font-medium underline decoration-amber-500/35 underline-offset-2 hover:text-amber-800">Notebook LM</a>へマニュアル上の根拠を質問し、AI事前案が適切かを確認・修正します。
           </p>
           <div class="grid grid-cols-1 md:grid-cols-2 gap-3 mt-2">
             <div class="bg-blue-500/5 border border-blue-500/15 rounded-lg px-4 py-3">
@@ -448,11 +506,11 @@
         <div class="flex-1 bg-emerald-500/5 border border-emerald-500/20 rounded-xl p-5 md:p-6">
           <div class="flex items-center gap-2 mb-3">
             <i data-lucide="presentation" class="w-4 h-4 text-emerald-600"></i>
-            <h3 class="font-bold text-slate-900">規則審査会議で報告</h3>
+            <h3 class="font-bold text-slate-900">シート確定・局長へ完了報告</h3>
             <span class="ml-auto text-[10px] bg-emerald-500/10 text-emerald-600 font-medium px-2 py-0.5 rounded-full">会議本番</span>
           </div>
           <p class="text-sm text-ads-muted leading-relaxed mb-4">
-            STEP 3・4でまとめた指摘事項を規則審査会議で報告します。書類の不備・修正点・確認事項を議論し、役員会議での最終承認に向けた整理を行います。
+            担当者が意見・質問シートの内容を読み戻し、確認済みの状態に整えます。その後、指定の連絡手段で局長へ「チェック完了しました」と報告します。規則審査会議では、確認済みの指摘事項を共有・議論し、役員会議での最終承認に向けて整理します。
           </p>
           <div class="flex items-center gap-2 text-xs text-emerald-600 bg-emerald-500/5 border border-emerald-500/15 rounded-full px-4 py-1.5 w-fit">
             <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
@@ -496,10 +554,7 @@
         会議の議案書類をアップロード・管理するための専用システム。議長・委員長が書類を登録し、局メンバーが確認する起点となる。
       </p>
       <div class="mt-3 rounded-lg bg-purple-500/5 border border-purple-500/15 px-2.5 py-2 text-[10px] text-ads-muted leading-snug">
-        <div class="flex flex-wrap gap-x-3 gap-y-0.5">
-          <span><span class="text-ads-dim">ログインID</span>　<span class="font-mono font-semibold text-slate-800">observe</span></span>
-          <span><span class="text-ads-dim">パスワード</span>　<span class="font-mono font-semibold text-slate-800">yU3g7xTb</span></span>
-        </div>
+        オブザーブアカウントを使用します。ログイン情報は、局内の安全な共有先で確認してください。
       </div>
       <div class="mt-4 pt-4 border-t border-ads-border/50 text-xs text-ads-dim flex items-center gap-1.5">
         <i data-lucide="arrow-right" class="w-3 h-3"></i>
@@ -580,9 +635,9 @@
       <div class="flex items-start gap-4">
         <div class="text-2xl font-black text-purple-500 leading-none flex-shrink-0 mt-1">02</div>
         <div>
-          <h3 class="font-bold text-slate-900 mb-2">5つのSTEPで業務が回る</h3>
+          <h3 class="font-bold text-slate-900 mb-2">AIの下準備を人が確認して業務を回す</h3>
           <p class="text-sm text-ads-muted leading-relaxed">
-            上程依頼 → アップロード → 書類審査 → 担当割り振り・書き込み → 会議報告、という5つのSTEPが毎月繰り返される。各STEPで担当者と使用ツールが明確に決まっている。
+            上程依頼・アップロード後、議案ごとの担当者を決め、AI要約と質問案を準備する。担当者が原議案とNotebook LMのマニュアル回答で内容を確認・修正し、局長への完了報告を経て会議へ進む。
           </p>
         </div>
       </div>
@@ -621,7 +676,7 @@
     <h2 class="text-xl md:text-2xl font-bold text-slate-900">さらに強力な支援：マニュアル込みのAI</h2>
   </div>
   <p class="mb-8 text-sm md:text-base text-ads-muted leading-relaxed">
-    アジェンダシステムやGoogleドライブ・ドキュメントによる毎月の運用に加え、<strong class="text-slate-800">2026年度の規則・財政・コンプライ関連マニュアル等をソースとして読み込ませた生成AI</strong>を2系統用意しています。公式資料に根ざした「調べ物」と、審査・チェック・文案づくりの「作業補助」を役割分担し、局員の負荷を下げるためのオプションです。
+    アジェンダシステムやGoogleドライブ・ドキュメントによる毎月の運用に加え、<strong class="text-slate-800">専用のAI審査スキルと、2026年度の規則・財政・コンプライ関連マニュアル等をソースとして読み込ませた生成AI</strong>を使います。AIで要約・指摘案を準備し、公式資料に基づく確認は担当者が行います。
   </p>
 
   <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -698,21 +753,12 @@
     <div class="bg-purple-500/5 border border-purple-500/20 rounded-xl p-5">
       <div class="flex items-center gap-2 mb-3">
         <i data-lucide="key-round" class="w-4 h-4 text-purple-600 flex-shrink-0"></i>
-        <p class="text-sm font-bold text-slate-900">アジェンダシステム（ログイン情報）</p>
+        <p class="text-sm font-bold text-slate-900">アジェンダシステム（オブザーブアカウント）</p>
       </div>
       <p class="text-xs text-ads-muted mb-4">
-        <a href="https://ag.jaycee.or.jp/2026/okinawa/user/login" target="_blank" rel="noopener noreferrer" class="text-ads-accent-light font-medium underline underline-offset-2 hover:text-blue-700">ログインページ</a>で以下を入力してください。
+        <a href="https://ag.jaycee.or.jp/2026/okinawa/user/login" target="_blank" rel="noopener noreferrer" class="text-ads-accent-light font-medium underline underline-offset-2 hover:text-blue-700">ログインページ</a>を開き、局内の安全な共有先にある認証情報を使用してください。
       </p>
-      <dl class="space-y-2.5 text-sm">
-        <div class="flex flex-wrap items-baseline gap-x-3 gap-y-1">
-          <dt class="text-ads-muted shrink-0 min-w-[5.5rem]">ログインID</dt>
-          <dd class="font-mono font-semibold text-slate-900 tracking-wide">observe</dd>
-        </div>
-        <div class="flex flex-wrap items-baseline gap-x-3 gap-y-1">
-          <dt class="text-ads-muted shrink-0 min-w-[5.5rem]">パスワード</dt>
-          <dd class="font-mono font-semibold text-slate-900 tracking-wide">yU3g7xTb</dd>
-        </div>
-      </dl>
+      <p class="text-xs text-purple-700 bg-white/70 rounded-lg px-3 py-2">公開ページにはログインID・パスワードを掲載しません。</p>
     </div>
   </div>
 </div>
