@@ -88,6 +88,12 @@
         }
 
         /* 青：規則財審審査会議 */
+        .event-kyoku {
+            background-color: #1e3a8a;
+            color: #ffffff;
+        }
+
+        /* 濃い青：規則財政審査局会議 */
         .event-kaiin {
             background-color: #f3e8ff;
             color: #6b21a8;
@@ -175,6 +181,7 @@
                     <span class="event-badge event-seifuku">正副</span><span>正副役員会議（上程・公開・会議）</span>
                     <span class="event-badge event-yakuin">役員</span><span>役員会議（上程・公開・会議）</span>
                     <span class="event-badge event-meeting">規則</span><span>規則財審審査会議</span>
+                    <span class="event-badge event-kyoku">局会</span><span>規則財政審査局会議</span>
                     <span class="event-badge event-meeting">DL</span><span>規則財審局長・議案データDL（正副アジェンダ公開日）</span>
                     <span class="event-badge event-meeting">完</span><span>規則財政審査完了（規則財審審査会議の2日前）</span>
                     <span class="event-badge event-kaiin">会員</span><span>会員会議所</span>
@@ -262,6 +269,8 @@
                             </th>
                             <th class="p-3 text-left">規則財審審査会議<br><span class="font-normal text-gray-500">局長・副局長</span>
                             </th>
+                            <th class="p-3 text-left bg-blue-900 text-white">規則財政審査局会議<br><span class="font-normal text-blue-100">局員</span>
+                            </th>
                             <th class="p-3 text-left">役員会議<br><span class="font-normal text-gray-500">役員全員</span></th>
                             <th class="p-3 text-left">会員会議所<br><span
                                     class="font-normal text-gray-500">各LOM理事長+役員全員</span></th>
@@ -335,6 +344,12 @@
                 10: { day: 18, dow: 0 },
                 11: { day: 22, dow: 0 }
             },
+            kyoku: {  // 規則財政審査局会議
+                9: { day: 7, dow: 1, time: '20時', place: '宜野湾青年会議所' },
+                10: { day: 13, dow: 2, time: '19時', place: 'オンライン' },
+                11: { day: 10, dow: 2, time: '19時', place: 'オンライン' },
+                12: { day: 7, dow: 1, time: '19時', place: '宜野湾青年会議所' }
+            },
             yakuin: {  // 役員会議 第4土曜が基本（月により調整）
                 1: { day: 9, dow: 5, place: 'ZOOM' },
                 2: { day: 28, dow: 6, place: '那覇' },
@@ -391,6 +406,11 @@
                     addEvent(events, kis.day, { type: 'meeting', label: '規則財審審査会議' });
                     addEvent(events, shiftDays(kisMeet, -2).getDate(), { type: 'kisoku_done', label: '規則財政審査完了（規則財審審査会議2日前）' });
                 }
+                const kyoku = OKINAWA_2026.kyoku[m];
+                if (kyoku && kyoku.day) {
+                    const details = [kyoku.time, kyoku.place ? '＠' + kyoku.place : ''].filter(Boolean).join(' ');
+                    addEvent(events, kyoku.day, { type: 'kyoku', label: '規則財政審査局会議' + (details ? ' ' + details : '') });
+                }
                 if (yk && yk.day) {
                     const meet = new Date(TARGET_YEAR, m - 1, yk.day);
                     addEvent(events, meet.getDate(), { type: 'meeting', label: '役員会議' + (yk.place ? '(' + yk.place + ')' : '') });
@@ -441,6 +461,7 @@
             if (ev.type === 'agenda') return '公';
             if (ev.type === 'kisoku_dl') return 'DL';
             if (ev.type === 'kisoku_done') return '完';
+            if (ev.type === 'kyoku') return '局会';
             if (ev.type === 'meeting') {
                 if (ev.label.indexOf('正副') >= 0) return '正副';
                 if (ev.label.indexOf('役員会議') >= 0) return '役員';
@@ -453,6 +474,7 @@
 
         function getEventBadgeClass(ev) {
             if (ev.type === 'kisoku_dl' || ev.type === 'kisoku_done') return 'event-meeting';
+            if (ev.type === 'kyoku') return 'event-kyoku';
             if (ev.label.indexOf('正副') >= 0) return 'event-seifuku';
             if (ev.label.indexOf('役員') >= 0) return 'event-yakuin';
             if (ev.label.indexOf('会員') >= 0) return 'event-kaiin';
@@ -500,12 +522,14 @@
             for (let m = 1; m <= 12; m++) {
                 const sf = OKINAWA_2026.seifuku[m];
                 const kis = OKINAWA_2026.kisoku[m];
+                const kyoku = OKINAWA_2026.kyoku[m];
                 const yk = OKINAWA_2026.yakuin[m];
                 const ki = OKINAWA_2026.kaiin[m];
-                const fmt = (o) => o && o.day ? (o.note || '') + o.day + '日(' + weekdayKanji[o.dow] + ')' + (o.place ? ' ' + o.place : '') : (o && o.place ? o.place : '-');
+                const fmt = (o) => o && o.day ? (o.note || '') + o.day + '日(' + weekdayKanji[o.dow] + ')' + (o.time ? ' ' + o.time : '') + (o.place ? (o.time ? ' ＠' : ' ') + o.place : '') : (o && o.place ? o.place : '-');
                 html += '<tr class="hover:bg-gray-50"><td class="p-3 font-bold">' + m + '月</td>';
                 html += '<td class="p-3">' + (sf ? fmt(sf) : '-') + '</td>';
                 html += '<td class="p-3">' + (kis ? fmt(kis) : '-') + '</td>';
+                html += '<td class="p-3 bg-blue-900 text-white font-bold">' + (kyoku ? fmt(kyoku) : '-') + '</td>';
                 html += '<td class="p-3">' + (yk ? (yk.day ? fmt(yk) : yk.place) : '-') + '</td>';
                 html += '<td class="p-3">' + (ki ? fmt(ki) : '-') + '</td></tr>';
             }
@@ -558,7 +582,7 @@
                 empty.classList.add('hidden');
                 list.innerHTML = evs.map(function (ev) {
                     var bc = getEventBadgeClass(ev);
-                    var tl = ev.type === 'meeting' ? '会議' : ev.type === 'entry' ? 'エントリー' : ev.type === 'submit' ? '提出' : ev.type === 'agenda' ? '配信' : ev.type === 'kisoku_dl' ? 'DL' : ev.type === 'kisoku_done' ? '完了' : 'イベント';
+                    var tl = ev.type === 'meeting' ? '会議' : ev.type === 'kyoku' ? '局会議' : ev.type === 'entry' ? 'エントリー' : ev.type === 'submit' ? '提出' : ev.type === 'agenda' ? '配信' : ev.type === 'kisoku_dl' ? 'DL' : ev.type === 'kisoku_done' ? '完了' : 'イベント';
                     return '<li class="flex items-start gap-2"><span class="event-badge ' + bc + ' shrink-0">' + tl + '</span><span>' + ev.label + '</span></li>';
                 }).join('');
             }
